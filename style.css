@@ -1,24 +1,22 @@
 :root {
-  --bg-color: #f2f7f4;           /* Fondo verde menta pastel suave */
-  --card-bg: #ffffff;            /* Tarjetas blanco puro */
-  --primary-green: #2d5a27;      /* Verde esmeralda profundo (para títulos) */
-  --moss-green: #407b4d;         /* Verde musgo/hoja elegante */
-  --light-green: #e1efe6;        /* Menta muy suave para fondos de tarjetas */
-  --border-green: #a8d5ba;       /* Verde pastel para bordes */
-  --text-dark: #1b381e;          /* Texto oscuro con tinte boscoso */
-  --aprobado-bg: #d4ebd9;        /* Verde claro cuando el curso está aprobado */
-  --aprobado-border: #529462;    /* Borde verde activo */
-  --bloqueado-bg: #eef2ef;       /* Fondo neutro bloqueado */
-  --bloqueado-text: #9ca3af;     /* Texto gris bloqueado */
+  --bg-color: #fff0f5;
+  --card-bg: #ffffff;
+  --primary-pink: #f472b6;
+  --dark-pink: #db2777;
+  --soft-pink: #fbcfe8;
+  --text-color: #831843;
+  --aprobado-bg: #fce7f3;
+  --aprobado-border: #f472b6;
+  --bloqueado-bg: #f3f4f6;
+  --bloqueado-text: #9ca3af;
 }
 
 body {
-  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: var(--bg-color);
-  color: var(--text-dark);
+  color: var(--text-color);
   margin: 0;
   padding: 20px;
-  min-height: 100vh;
 }
 
 header {
@@ -27,40 +25,37 @@ header {
 }
 
 h1 {
-  color: var(--primary-green);
+  color: var(--dark-pink);
   font-size: 2.2rem;
   margin-bottom: 5px;
-  letter-spacing: 0.5px;
 }
 
 .subhead {
   font-size: 1.1rem;
-  color: var(--moss-green);
-  font-weight: 600;
+  color: #9d174d;
 }
 
 .progress-card {
-  background: var(--card-bg);
+  background: white;
   max-width: 600px;
   margin: 0 auto 30px auto;
-  padding: 18px 25px;
+  padding: 15px 25px;
   border-radius: 20px;
-  box-shadow: 0 8px 20px rgba(45, 90, 39, 0.08);
-  border: 2px solid var(--border-green);
+  box-shadow: 0 4px 15px rgba(244, 114, 182, 0.15);
+  border: 2px solid var(--soft-pink);
   text-align: center;
 }
 
 .progress-bar-bg {
-  background-color: var(--light-green);
-  height: 20px;
+  background-color: #fce7f3;
+  height: 18px;
   border-radius: 10px;
   overflow: hidden;
-  margin-top: 12px;
-  border: 1px solid var(--border-green);
+  margin-top: 10px;
 }
 
 .progress-bar-fill {
-  background: linear-gradient(90deg, #529462, #2d5a27);
+  background: linear-gradient(90deg, #f472b6, #db2777);
   height: 100%;
   width: 0%;
   transition: width 0.4s ease;
@@ -68,36 +63,36 @@ h1 {
 
 .malla-grid {
   display: flex;
-  gap: 18px;
+  gap: 15px;
   overflow-x: auto;
-  padding-bottom: 120px; /* Espacio extra para que la imagen de Zoro no tape cursos */
+  padding-bottom: 20px;
 }
 
 .semestre-col {
-  background: var(--card-bg);
+  background: white;
   border-radius: 16px;
-  min-width: 230px;
-  padding: 16px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
-  border: 1px solid var(--border-green);
+  min-width: 220px;
+  padding: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+  border: 1px solid #fbcfe8;
 }
 
 .semestre-title {
   text-align: center;
   font-size: 1.1rem;
-  font-weight: 700;
-  color: var(--primary-green);
-  border-bottom: 2px dashed var(--border-green);
+  font-weight: bold;
+  color: var(--dark-pink);
+  border-bottom: 2px dashed var(--soft-pink);
   padding-bottom: 8px;
-  margin-bottom: 14px;
+  margin-bottom: 12px;
 }
 
 .curso-card {
-  background-color: var(--card-bg);
-  border: 2px solid var(--border-green);
+  background-color: #fff;
+  border: 2px solid var(--soft-pink);
   border-radius: 12px;
   padding: 12px;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
   font-size: 0.85rem;
   font-weight: 600;
   cursor: pointer;
@@ -107,8 +102,7 @@ h1 {
 
 .curso-card:hover:not(.bloqueado) {
   transform: translateY(-2px);
-  box-shadow: 0 6px 14px rgba(64, 123, 77, 0.18);
-  border-color: var(--moss-green);
+  box-shadow: 0 4px 10px rgba(244, 114, 182, 0.2);
 }
 
 .curso-card.bloqueado {
@@ -122,38 +116,20 @@ h1 {
 .curso-card.aprobado {
   background-color: var(--aprobado-bg);
   border-color: var(--aprobado-border);
-  color: var(--primary-green);
+  color: var(--dark-pink);
+  text-decoration: line-through;
 }
 
 .curso-card.aprobado::after {
-  content: " ⚔️";
-  font-size: 0.85rem;
+  content: " 🌸";
+  text-decoration: none;
+  display: inline-block;
 }
 
 .code-badge {
   font-size: 0.7rem;
-  color: var(--moss-green);
+  color: #be185d;
   display: block;
-  margin-top: 5px;
-  font-weight: 500;
-}
-
-/* PERSONAJE ZORO FLOTANTE EN LA ESQUINA INFERIOR DERECHA */
-body::after {
-  content: "";
-  position: fixed;
-  bottom: 0;
-  right: 15px;
-  width: 160px;
-  height: 220px;
-  background-image: url('zoro.jpg');
-  background-size: cover;
-  background-position: center top;
-  border-top-left-radius: 30px;
-  border-top-right-radius: 30px;
-  box-shadow: -4px -4px 20px rgba(0, 0, 0, 0.25);
-  border: 3px solid var(--border-green);
-  border-bottom: none;
-  pointer-events: none; /* No interfiere con los clics */
-  z-index: 9999;
+  margin-top: 4px;
+  font-weight: normal;
 }
